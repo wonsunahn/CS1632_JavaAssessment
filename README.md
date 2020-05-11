@@ -1,7 +1,9 @@
 # Java Assessment Exercise
 
+DUE: May 13, 2020 11:59 PM
+
 The purpose of this exercise is to assess your Java programming skills coming
-into this class.  Please submit by Wednesday 6:00 PM so that I may give you
+into this class.  Please submit by Wednesday 11:59 PM so that I may give you
 feedback before the add/drop deadline.  I may recommend that some of you drop
 the course if your programming skills are not up to par.  Submission of this
 exercise will take the place of attendance today.  The actual score will only
@@ -73,28 +75,28 @@ one.
 1. If you are new to git source versioning or GitHub, I recommend that you
 start by using the Desktop GUI version.  You can download it from:
 
-https://desktop.github.com/
+    https://desktop.github.com/
 
 2. Once you've installed GitHub Desktop, let's first clone the course repository to your computer:
 
-https://help.github.com/en/desktop/contributing-to-projects/cloning-a-repository-from-github-to-github-desktop
+    https://help.github.com/en/desktop/contributing-to-projects/cloning-a-repository-from-github-to-github-desktop
 
 You will need to go to the root of the course repository to get the clone link:
 
-https://github.com/wonsunahn/CS1632_Summer2020
+    https://github.com/wonsunahn/CS1632_Summer2020
 
-This way, you will have always have up=to-date course materials on your
+    This way, you will have always have up=to-date course materials on your
 computer.  Whenever there are updates to the course materials, the "Pull"
 request button will be activated for the repository on GitHub Desktop.  Clicking
 that button will bring your local folder in sync with the updated materials.
 
 3. Next, create a new repository just for this exercise:
 
-https://help.github.com/en/desktop/getting-started-with-github-desktop/creating-your-first-repository-using-github-desktop
+    https://help.github.com/en/desktop/getting-started-with-github-desktop/creating-your-first-repository-using-github-desktop
 
-You can name it whatever you want (but preferably something easy to remember, right?).
+    You can name it whatever you want (but preferably something easy to remember, right?).
 
-Once you've created the repository, copy over the contents of just the exercise
+    Once you've created the repository, copy over the contents of just the exercise
 folder in the course repository to the new repository folder.  Once you've
 copied over the files, you need to "Commit" and "Push" the files to upload
 those files to GitHub.  If you are successful, you should be able to see your
@@ -146,8 +148,8 @@ Your job is to complete SortedCollection so that it works properly.
 
 The places in source code where you are asked to insert or modify code are
 marked by // TODO comments.  Feel free to use any data structure from java.util
-or one of your own.  It doesn't matter how you implement it as long as it
-works as specified.
+or one of your own.  It doesn't matter how you implement it as long as it works
+as specified.  Pay attention to the Javadoc comments on top of each method.
 
 ## Submission
 
