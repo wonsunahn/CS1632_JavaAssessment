@@ -1,19 +1,22 @@
 - [Java Assessment Exercise](#java-assessment-exercise)
   * [Description](#description)
   * [Clone the GitHub Repository](#clone-the-github-repository)
+  * [Install Apache Maven](#install-apache-maven)
+  * [Install VSCode](#install-vscode)
   * [Install JDK 8](#install-jdk-8)
-    + [Setting up JDK 8 for Windows](#setting-up-jdk-8-for-windows)
-    + [Setting up JDK 8 for MacOS](#setting-up-jdk-8-for-macos)
+    + [Adding JDK 8 to PATH environment variable (Windows)](#adding-jdk-8-to-path-environment-variable--windows-)
+    + [Adding JDK 8 to PATH environment variable (MacOS / Linux)](#adding-jdk-8-to-path-environment-variable--macos---linux-)
   * [Compile the Code](#compile-the-code)
-  * [Run and Test the Code](#run-and-test-the-code)
+  * [Run the Code](#run-the-code)
   * [Complete SortedCollection.java](#complete-sortedcollectionjava)
+  * [Test the Code](#test-the-code)
   * [Submission](#submission)
   * [GradeScope Feedback](#gradescope-feedback)
   * [Resources](#resources)
 
 # Java Assessment Exercise
 
-DUE: Sep 7 (Wednesday), 2022 Before Class
+DUE: January 17 (Tuesday), 2023 Before Class
 
 Please accept Exercise 0 on **GitHub Classroom** using the following link:
 TBD
@@ -96,100 +99,168 @@ while offline, that is a great option.  If you do this, please make sure that
 you click on "Fetch Origin" on GitHub Desktop and Pull any changes frequently
 (before every class) to keep up-to-date with newly released materials.
  
+## Install Apache Maven
+
+In this class, we will be using the Apache Maven build framework to build and
+test our code.  Please download the binary zip file from:
+https://maven.apache.org/download.cgi
+
+Unzip the file at your preferred location and add the bin directory to your PATH enviornment variable as instructed in:
+https://maven.apache.org/install.html
+
+## Install VSCode
+
+In this class, we will be using VSCode as our default IDE.  It makes
+collaboration, code sharing, and other tasks much easier.  You may use other
+IDEs if you choose to do so.  All exercises and deliverables are designed so
+that they can be done independent of an IDE.
+
+If you choose to use VSCode, please download and install:
+https://code.visualstudio.com/download
+
+Please also install the "Extension Pack for Java" on VSCode by searching for it on the Extensions menu:
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
+
+You may also want to familiarize yourself with the Live Share in preparation of working with a partner:
+https://code.visualstudio.com/learn/collaboration/live-share
+
 ## Install JDK 8
 
-The official Java version for this class is Java 8 (1.8.0.231).  Please install the Java package for your OS at:
+The official Java version for this class is Adoptium Temurin JDK 8
+(1.8.0_352).  It is **very important that you install JDK 8** because some
+testing tools we will use in this class may not be compatible with other
+versions of Java.  You can easily install the JDK using VSCode by following
+these steps:
 
-https://drive.google.com/drive/folders/1E76H7y2nMsrdiBwJi0nwlzczAgTKKhv7
+1. Click on View > Command Palette.  This will launch the command palette at
+   the top part of the IDE.
+2. Search for "Java: Install New JDK" on the command palette.  This will
+   create a new tab named "Install New JDK".
+3. Click on the 8(LTS) version and then the "Download" button.
+4. Launch the downloaded JDK installation package and go through the steps.
+5. Click on the "Reload Window" button on VSCode as instructed.
 
-After installation, make sure you have the correct Java and Javac versions by doing "java
--version" and "javac -version".  You should get something like the following:
+### Adding JDK 8 to PATH environment variable (Windows)
+
+For Windows, the installation package should automatically update the PATH
+variable so you don't need to do anything extra.  If you query the Java
+version on the "Terminal" tab on VSCode or on a regular CMD terminal on
+Windows:
 
 ```
-$ java -version
-java version "1.8.0_231"
-Java(TM) SE Runtime Environment (build 1.8.0_231-b11)
-Java HotSpot(TM) 64-Bit Server VM (build 25.231-b11, mixed mode)
+java -version
 ```
 
-Alternatively, you can use these versions of OpenJDK 8 that have been verified to work with our tool chain:
-* https://chocolatey.org/packages/openjdk8
-* https://chocolatey.org/packages/zulu8
+You should get the following:
 
-After installing, they should show their respective versions on "java -version".  For example, for zulu8:
 ```
-$ java -version
-openjdk version "1.8.0_265"
-OpenJDK Runtime Environment (Zulu 8.48.0.53-CA-win64) (build 1.8.0_265-b11)
-OpenJDK 64-Bit Server VM (Zulu 8.48.0.53-CA-win64) (build 25.265-b11, mixed mode)
+openjdk version "1.8.0_352"
+OpenJDK Runtime Environment (Temurin)(build 1.8.0_352-b08)
+OpenJDK 64-Bit Server VM (Temurin)(build 25.352-b08, mixed mode)
 ```
 
-If you don't see the correct version (either for JDK 8, OpenJDK 8, or Zulu 8), please follow the below instructions to
-set up the Path OS environment variable.
-
-### Setting up JDK 8 for Windows
+If you don't see the correct version, please follow the below instructions
+to set up the PATH OS environment variable.
 
 1. Search "environment" in the Windows 10 search box.
 2. Open "Edit the system environment variables" control panel.
 3. Click on the "Environment Variables" box.
-4. Search the "Path" environment variable in user variables and system variables.
-5. Add the bin directory of the Java installation, probably "C:\Program Files\Java\jdk1.8.0_231\bin" to the top of the "Path"
-6. For good measure, you may want to remove other Java installations from the "Path"
-7. After this, try doing "java -version" again and it should have changed.
+4. Search the "PATH" environment variable in user variables and system variables.
+5. Add the bin directory of the Java installation, probably "C:\Program Files\Eclipse Adoptium\jdk-8.0.352.8-hotspot\bin" to the top of the "PATH".
+6. For good measure, you may want to remove other Java installations from the "PATH".
+7. After this, try doing "java -version" again on a new terminal and it should have changed.
 
-If you use [Chocolatey](https://chocolatey.org/) as your package manager, and you opted to install OpenJDK 8, you will have to replace the above Java bin path with the path where Chocolatey installs the package.
+### Adding JDK 8 to PATH environment variable (MacOS / Linux)
 
-### Setting up JDK 8 for MacOS
+Below instructions are assuming you are using the bash shell.  If you are
+using the zsh shell instead of the bash shell, please modify ~/.zshrc
+instead of ~/.bash_profile.  You can see what shell you are using by doing
+"ps" on the commandline. 
 
 1. Open ~/.bash_profile with your favorite editor (if you don't have one, just do "pico ~/.bash_profile")
 2. Add the following 2 lines at the bottom
    ```
-   export PATH=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/bin:$PATH
-   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/
+   export PATH=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/bin:$PATH
+   export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/
    ```
 3. Save the file and exit from the terminal
-4. Relaunch the terminal and try doing "which java".  It should say /Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/bin/java.
+4. Relaunch the terminal and try doing "which java".  It should say "/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/bin/java".
 5. Now you are good to go!  Otherwise, try doing "echo $PATH" and see if your path is not updated properly, or if there is some other Java installation before you.
 
-Alternatively, you can use [jEnv](https://www.jenv.be/) that allows you to switch Java versions easily on a Mac.  You will also need [Mac brew](https://brew.sh/) if you don't already have it.  These are just one liners to install so it should be pretty painless.
 
-It's a brew installation so it should be pretty painless.
+Alternatively, you can use [jEnv](https://www.jenv.be/) that allows you to
+switch Java versions easily on a Mac.  You will also need [Mac
+brew](https://brew.sh/) if you don't already have it.  It's a brew
+installation so it should be pretty painless.
 
 ## Compile the Code
 
-Go to the new repository folder you created for this exercise and make sure that the Java file compiles:
+If you are working on the VSCode IDE, it will auto-compile the code
+everytime you make a change.  If you have issues, they will show up on the
+"Problems" tab at the bottom pane.
+
+If you feel the need to manually compile on the
+commandline, you can use Apache Maven:
 
 ```
-$ mkdir bin
-$ javac -d bin src/*.java
-
+mvn compile
 ```
 
-You should see no errors at this point
+We will have an opportunity to talk more about Maven later on, so don't
+worry if you are unfamiliar with it.
 
-## Run and Test the Code
+## Run the Code
 
-Try running the compiled class file:
+You can run the main method of SortedCollection by using the VSCode "Run and
+Debug" menu on VSCode: https://code.visualstudio.com/docs/editor/debugging.
 
-```
-$ java -cp bin SortedCollection
-Usage: java SortedCollection [num1] [num2] [num3] ...
-```
-
-The SortedCollection main method just prints usage information when no
-commandline arguments are passed.  With commandline arguments, it should print
-out the commandline arguments in sorted order, from smallest to largest:
+Once you press "Launch SortedCollection", you will get prompted for
+arguments to pass to the program, which is the list of numbers to sort.  For
+example, if you pass "3 2 1", you will get the output:
 
 ```
-$ java -cp bin SortedCollection 3 2 1
+sorted: 0 0 0
+```
+
+That is because SortedCollection.java is as of now incomplete.  Once you are
+done, you should get the correct output:
+
+```
 sorted: 1 2 3
 ```
 
-But at the current state, SortedCollection is incomplete and prints out:
+Again, you can also run the class using Apache Maven on the terminal:
 
 ```
-$ java -cp bin SortedCollection 3 2 1
-sorted: 0 0 0
+mvn exec:java -D"exec.args=3 2 1"
+```
+
+Currently, it shows an output that looks like the below:
+
+```
+...
+[INFO] --- exec-maven-plugin:3.0.0:java (default-cli) @ sortedcollection ---
+sorted: 0 0 0 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+...
+```
+
+if you run the program without arguments, it just shows the usage info:
+
+```
+mvn exec:java
+```
+
+```
+...
+[INFO] --- exec-maven-plugin:3.0.0:java (default-cli) @ sortedcollection ---
+Usage: java SortedCollection [num1] [num2] [num3] ...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+...
 ```
 
 Your job is to complete SortedCollection so that it works properly.
@@ -201,14 +272,46 @@ marked by // TODO comments.  Feel free to use any data structure from java.util
 or one of your own.  It doesn't matter how you implement it as long as it works
 as specified.  Pay attention to the Javadoc comments on top of each method.
 
+## Test the Code
+
+I have written a test class to test your SortedCollection implementation
+named SortedCollectionTest under the src/test folder.  You can use the
+VSCode "Testing" menu to run the test:
+https://code.visualstudio.com/docs/java/java-testing.
+
+Or, again, you can use Apache Maven instead:
+
+```
+mvn test
+```
+
+Initially, most of the tests will fail:
+
+
+```
+...
+Tests run: 10, Failures: 9, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+...
+```
+
+When you are done with implementing SortedCollection, all the tests should
+pass.  If they don't try reading the failing test to understand what you did
+wrong.
+
 ## Submission
 
-When you are done, submit your GitHub Classroom repository to GradeScope at the
-"Java Assessment Exercise" link.  Once you submit, GradeScope will run the
-autograder to grade you and give feedback.  If you get deductions, fix your
-code based on the feedback and resubmit.  Repeat until you don't get
-deductions.  Don't forget that you have to Push your changes to upload them to
-the repository.
+When all tests pass, you are ready to submit.  Please submit your GitHub
+Classroom repository to GradeScope at the "Java Assessment Exercise" link.
+Once you submit, GradeScope will run the autograder to grade you and give
+feedback.  If you get deductions, fix your code based on the feedback and
+resubmit.  Repeat until you don't get deductions.  
+
+Don't forget that you have to
+Push your changes to upload them to the repository.
 
 IMPORTANT: Please keep the github private!  This applies to all future submissions.
 
@@ -218,19 +321,11 @@ GradeScope feedback is your friend.  Submit as many times as you want to get
 frequent feedback.  There are 10 tests for this exercise and if there is an
 error, the error message will tell you what was expected what was observed.
 When the compared value is a string, brackets ([, ]) are used to annotate
-exactly which part of the two strings differed.
-
-The tests were done using an automated testing infrastructure called JUnit that
-allows you to rigorously test software.  You will eventually learn to use this
-tool too as part of this course!  You can get a sneak peak to see what is being
-tested by viewing [gradescope_autograder/SortedCollectionGrading.java](gradescope_autograder/SortedCollectionGrading.java).  If you
-don't get a perfect score, that might actually help.  A common programming
-error is to use class variables instead of instance variables, for example.
+exactly which part of the two strings differed.  If all the
+SortedCollectionTest tests passed, then you should not get any deductions
+because GradeScope runs the exact same tests.  
 
 ## Resources
-
-* JDK 8 installation packages:  
-https://drive.google.com/drive/folders/1E76H7y2nMsrdiBwJi0nwlzczAgTKKhv7
 
 * Java 8 API reference manual:
 https://docs.oracle.com/javase/8/docs/api/overview-summary.html
