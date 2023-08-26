@@ -16,10 +16,10 @@
 
 # Java Assessment Exercise
 
-DUE: July 6 (Thursday), 2023 Before Class
+DUE: September 6 (Wednesday), 2023 Before Class
 
 Please accept Exercise 0 on **GitHub Classroom** using the following link:
-https://classroom.github.com/a/KAIEZfLZ
+TBD
 
 When you accept the assignment, a new GitHub repository will be automatically
 created for you with which you will do backup, versioning, and even submission.
@@ -91,7 +91,7 @@ this new repository until you get used to Git operations, without having to
 worry about deleting or overwriting important source code.
 
 Also optionally, you may decide to clone the course repository at
-https://github.com/wonsunahn/CS1632_Summer2023 to your desktop as well.  Since
+https://github.com/wonsunahn/CS1632_Fall2023 to your desktop as well.  Since
 you don't own this repository, you will have to choose the "URL" tab when
 cloning and input that URL.  Also, you will only be able to Pull from the
 repository and not Push.  But if you want to have access to course materials
