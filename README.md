@@ -3,9 +3,9 @@
   * [Clone the GitHub Repository](#clone-the-github-repository)
   * [Install Apache Maven](#install-apache-maven)
   * [Install VSCode](#install-vscode)
-  * [Install JDK 8](#install-jdk-8)
-    + [Adding JDK 8 to PATH environment variable (Windows)](#adding-jdk-8-to-path-environment-variable-windows)
-    + [Adding JDK 8 to PATH environment variable (MacOS / Linux)](#adding-jdk-8-to-path-environment-variable-macos--linux)
+  * [Install JDK 11](#install-jdk-11)
+    + [Adding JDK 11 to PATH environment variable (Windows)](#adding-jdk-11-to-path-environment-variable-windows)
+    + [Adding JDK 11 to PATH environment variable (MacOS / Linux)](#adding-jdk-11-to-path-environment-variable-macos--linux)
   * [Compile the Code](#compile-the-code)
   * [Run the Code](#run-the-code)
   * [Complete SortedCollection.java](#complete-sortedcollectionjava)
@@ -16,10 +16,9 @@
 
 # Java Assessment Exercise
 
-DUE: September 6 (Wednesday), 2023 Before Class
+DUE: January 16 (Tuesday), 2024 Before Class
 
-Please accept Exercise 0 on **GitHub Classroom** using the following link:
-TBD
+Please accept Exercise 0 on **GitHub Classroom** using the following link: TBD
 
 When you accept the assignment, a new GitHub repository will be automatically
 created for you with which you will do backup, versioning, and even submission.
@@ -124,10 +123,10 @@ https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
 You may also want to familiarize yourself with the Live Share in preparation of working with a partner:
 https://code.visualstudio.com/learn/collaboration/live-share
 
-## Install JDK 8
+## Install JDK 11
 
-The official Java version for this class is Adoptium Temurin JDK 8
-(1.8.0_352).  It is **very important that you install JDK 8** because some
+The official Java version for this class is Adoptium Temurin JDK 11
+(11.0.21).  It is **very important that you install JDK 11** because some
 testing tools we will use in this class may not be compatible with other
 versions of Java.  You can easily install the JDK using VSCode by following
 these steps:
@@ -136,11 +135,11 @@ these steps:
    the top part of the IDE.
 2. Search for "Java: Install New JDK" on the command palette.  This will
    create a new tab named "Install New JDK".
-3. Click on the 8(LTS) version and then the "Download" button.
+3. Click on the 11(LTS) version and then the "Download" button.
 4. Launch the downloaded JDK installation package and go through the steps.
 5. Click on the "Reload Window" button on VSCode as instructed.
 
-### Adding JDK 8 to PATH environment variable (Windows)
+### Adding JDK 11 to PATH environment variable (Windows)
 
 For Windows, the installation package should automatically update the PATH
 variable so you don't need to do anything extra.  If you query the Java
@@ -151,12 +150,12 @@ Windows:
 java -version
 ```
 
-You should get the following:
+You should get something like the following:
 
 ```
-openjdk version "1.8.0_352"
-OpenJDK Runtime Environment (Temurin)(build 1.8.0_352-b08)
-OpenJDK 64-Bit Server VM (Temurin)(build 25.352-b08, mixed mode)
+openjdk version "11.0.21" 2023-10-17
+OpenJDK Runtime Environment Temurin-11.0.21+9 (build 11.0.21+9)
+OpenJDK 64-Bit Server VM Temurin-11.0.21+9 (build 11.0.21+9, mixed mode)
 ```
 
 If you don't see the correct version, please follow the below instructions
@@ -166,11 +165,11 @@ to set up the PATH OS environment variable.
 2. Open "Edit the system environment variables" control panel.
 3. Click on the "Environment Variables" box.
 4. Search the "PATH" environment variable in user variables and system variables.
-5. Add the bin directory of the Java installation, probably "C:\Program Files\Eclipse Adoptium\jdk-8.0.352.8-hotspot\bin" to the top of the "PATH".
+5. Add the bin directory of the Java installation, probably "C:\Program Files\Eclipse Adoptium\jdk-11.0.21.9-hotspot\bin" to the top of the "PATH".
 6. For good measure, you may want to remove other Java installations from the "PATH".
 7. After this, try doing "java -version" again on a new terminal and it should have changed.
 
-### Adding JDK 8 to PATH environment variable (MacOS / Linux)
+### Adding JDK 11 to PATH environment variable (MacOS / Linux)
 
 Below instructions are assuming you are using the bash shell.  If you are
 using the zsh shell instead of the bash shell, please modify ~/.zshrc
@@ -180,13 +179,12 @@ instead of ~/.bash_profile.  You can see what shell you are using by doing
 1. Open ~/.bash_profile with your favorite editor (if you don't have one, just do "pico ~/.bash_profile")
 2. Add the following 2 lines at the bottom
    ```
-   export PATH=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/bin:$PATH
-   export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/
+   export PATH=/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home/bin:$PATH
+   export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home/
    ```
 3. Save the file and exit from the terminal
-4. Relaunch the terminal and try doing "which java".  It should say "/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/bin/java".
+4. Relaunch the terminal and try doing "which java".  It should say "/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home/bin/java".
 5. Now you are good to go!  Otherwise, try doing "echo $PATH" and see if your path is not updated properly, or if there is some other Java installation before you.
-
 
 Alternatively, you can use [jEnv](https://www.jenv.be/) that allows you to
 switch Java versions easily on a Mac.  You will also need [Mac
@@ -335,5 +333,5 @@ because GradeScope runs the exact same tests.
 
 ## Resources
 
-* Java 8 API reference manual:
-https://docs.oracle.com/javase/8/docs/api/overview-summary.html
+* Java 11 API reference manual:
+https://docs.oracle.com/en/java/javase/11/docs/api/index.html
