@@ -16,7 +16,7 @@
 
 # Java Assessment Exercise
 
-DUE: September 1 (Monday), 2025 Before Class
+DUE: January 20 (Tuesday), 2026 Before Class
 
 Please accept Exercise 0 on **GitHub Classroom** using the following link: TBD
 
@@ -91,7 +91,7 @@ this new repository until you get used to Git operations, without having to
 worry about deleting or overwriting important source code.
 
 Also optionally, you may decide to clone the course repository at
-https://github.com/wonsunahn/CS1632_Fall2025 to your desktop as well.  Since
+https://github.com/wonsunahn/CS1632_Spring2026 to your desktop as well.  Since
 you don't own this repository, you will have to choose the "URL" tab when
 cloning and input that URL.  Also, you will only be able to Pull from the
 repository and not Push.  But if you want to have access to course materials
